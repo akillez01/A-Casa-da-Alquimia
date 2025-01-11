@@ -1,0 +1,103 @@
+.mainTitle {
+  font-size: 80px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #2f9437;
+  font-weight: bold;
+}
+
+.backIcon {
+  margin-right: 8px;
+}
+
+.selectTitle {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2f9437;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.item {
+  border: 5px solid #bbb;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  background-size: cover !important;
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+}
+
+.item:nth-child(1) {
+  background-image: url("/meditação.jpeg");
+}
+.item:nth-child(2) {
+  background-image: url("/ferdanirai.jpeg");
+}
+.item:nth-child(3) {
+  background-image: url("/serviidodaime.jpeg");
+}
+/* Adicione mais itens conforme necessário */
+.item:nth-child(4) {
+  background-image: url("/velamesa.jpeg");
+}
+.item:nth-child(5) {
+  background-image: url("/turmanatrilha.jpeg");
+
+}
+
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.title {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 24px; /* Tamanho menor para o texto */
+  font-weight: bold;
+  color: rgb(152, 212, 137);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto para melhor legibilidade */
+  font-family: 'Roboto', sans-serif; /* Fonte estilosa */
+}
+
+.item:hover .title {
+  color: #024222;
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 50px;
+  }
+
+  .item {
+    width: 100%;
+    height: 300px;
+  }
+
+  .title {
+    font-size: 18px; /* Tamanho menor para o texto em telas menores */
+  }
+}

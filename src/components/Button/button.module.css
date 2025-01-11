@@ -1,0 +1,9 @@
+.container {
+  padding: 20px;
+  cursor: pointer;
+  background-color: #078847;
+  border: none;
+  border-radius: 6px;
+  width: max-content;
+  color: white;
+}

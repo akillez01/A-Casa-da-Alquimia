@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  /* font-family: 'Roboto', sans-serif; Substitua 'Roboto' pela fonte desejada */
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  font-size: 50px;
+  background: linear-gradient(to bottom, #193528, #10b634);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.img {
+  width: 100%;
+  height: auto; /* Ajusta a altura automaticamente */
+  max-height: 780px; /* Define uma altura máxima */
+  object-fit: cover; /* Garante que a imagem cubra o contêiner */
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+  animation: move 3s infinite ease alternate; /* Ativa a animação */
+  /* animation: move 3s infinite ease alternate; */
+}
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+
+.desc {
+  font-size: 28px;
+  font-weight: 300;
+}
+

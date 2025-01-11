@@ -1,0 +1,30 @@
+{
+  "name": "nexttutorial",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.120.7",
+    "@react-three/fiber": "^8.17.12",
+    "bcryptjs": "^2.4.3",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "framer-motion": "^11.17.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "6.11.1",
+    "next": "13.4.3",
+    "next-auth": "^4.22.1",
+    "punycode": "^2.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.4.0",
+    "swr": "^2.3.0",
+    "gh-pages": "^3.2.3"
+  }
+}
