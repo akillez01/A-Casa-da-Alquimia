@@ -7,14 +7,10 @@ const nextConfig = {
     path: "", // Caminho base para imagens
     unoptimized: true, // Desativa otimização de imagens para export estático
   },
-  // Configuração para exportação estática
-  output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/A-Casa-da-Alquimia" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/A-Casa-da-Alquimia/" : "",
-  
+
   // Variáveis de ambiente
   env: {
-    MONGO_URI: process.env.URL_MONGO,
+    MONGO_URI: process.env.MONGO_URI,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
@@ -35,6 +31,9 @@ const nextConfig = {
 
     return config;
   },
+
+  // Remova a exportação estática aqui
+  // output: "export",  // Comentado para permitir rotas dinâmicas
 };
 
 module.exports = nextConfig;

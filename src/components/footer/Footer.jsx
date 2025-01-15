@@ -11,48 +11,40 @@ const Footer = () => {
       <div>©2025 A Casa da Alquimia. All rights reserved.</div>
       <div className={styles.social}>
         {/* Facebook */}
-        <Link href="https://www.facebook.com/casadaalquimia/?locale=pt_BR" passHref legacyBehavior>
-          <a target="_blank" rel="noopener noreferrer">
-            <Image
-              src={`${basePath}/1.png`}
-              width={24}
-              height={24}
-              alt="A casa da Alquimia Facebook Account"
-            />
-          </a>
+        <Link href="https://www.facebook.com/casadaalquimia/?locale=pt_BR">
+          <Image
+            src="../../1.png"
+            width={24}
+            height={24}
+            alt="A Casa da Alquimia Facebook"
+          />
         </Link>
         {/* Instagram */}
-        <Link href="https://www.instagram.com/casadaalquimia?igsh=bXp2anV1ejQwbGUy" passHref legacyBehavior>
-          <a target="_blank" rel="noopener noreferrer">
-            <Image
-              src={`${basePath}/2.png`}
-              width={24}
-              height={24}
-              alt="A casa da Alquimia Instagram Account"
-            />
-          </a>
+        <Link href="https://www.instagram.com/casadaalquimia?igsh=bXp2anV1ejQwbGUy">
+          <Image
+            src="../../2.png"
+            width={24}
+            height={24}
+            alt="A Casa da Alquimia Instagram"
+          />
         </Link>
         {/* WhatsApp */}
-        <Link href="https://wa.me/+5562996538902" passHref legacyBehavior>
-          <a target="_blank" rel="noopener noreferrer">
-            <Image
-              src={`${basePath}/icons8-whatsapp-office-l/icons8-whatsapp-40.png`}
-              width={24}
-              height={24}
-              alt="A casa da Alquimia WhatsApp Account"
-            />
-          </a>
+        <Link href="https://wa.me/+5562996538902">
+          <Image
+            src="../../whatsapp2.png"
+            width={24}
+            height={24}
+            alt="A Casa da Alquimia WhatsApp"
+          />
         </Link>
         {/* YouTube */}
-        <Link href="https://www.youtube.com/@ACasadaAlquimia" passHref legacyBehavior>
-          <a target="_blank" rel="noopener noreferrer">
-            <Image
-              src={`${basePath}/4.png`}
-              width={24}
-              height={24}
-              alt="A casa da Alquimia YouTube Account"
-            />
-          </a>
+        <Link href="https://www.youtube.com/@ACasadaAlquimia">
+          <Image
+            src="../../4.png"
+            width={24}
+            height={24}
+            alt="A Casa da Alquimia YouTube"
+          />
         </Link>
       </div>
     </div>

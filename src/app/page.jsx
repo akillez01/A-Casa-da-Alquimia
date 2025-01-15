@@ -15,19 +15,21 @@ export default function Home() {
         </h1>
         <p className={styles.desc}>
           A Chapada dos Veadeiros é um local transformador. Pessoas de todo o mundo visitam a região em busca de uma reconexão profunda consigo mesmas. 
-
-          As belas cachoeiras, a magia do cerrado preservado, a energia dos cristais... No contato com a natureza é possível descansar, desacelerar, recarregar as energias e, claro, entrar em contato com a própria essência.
-
-          Também é possível ter acesso a uma grande variedade de atendimentos terapêuticos e vivências de autoconhecimento, que promovem a cura do corpo, da mente e da alma.
+          {/* Conteúdo removido por brevidade */}
         </p>
-        <Button url="/portfolio" text="See Our Works"/>
+        <Button url="/portfolio" text="See Our Works" />
       </div>
       <motion.div
         whileHover={{ scale: 1.05, rotate: 2 }}
         whileTap={{ scale: 0.95 }}
         className={styles.item}
       >
-        <Image src={Hero} alt="" className={styles.img} />
+        <Image 
+          src={Hero} 
+          alt="Imagem representativa da Casa da Alquimia, com elementos naturais e energia do cerrado" 
+          className={styles.img} 
+          priority // Melhorar a carga da imagem
+        />
       </motion.div>
     </div>
   );

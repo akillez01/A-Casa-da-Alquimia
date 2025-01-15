@@ -18,8 +18,7 @@ const userSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true } // Adiciona automaticamente `createdAt` e `updatedAt`
 );
 
-// If the User collection does not exist, create a new one.
 export default mongoose.models.User || mongoose.model("User", userSchema);

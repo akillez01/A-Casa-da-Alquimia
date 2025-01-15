@@ -12,29 +12,29 @@ const handler = NextAuth({
       id: "credentials",
       name: "Credentials",
       async authorize(credentials) {
+        await connect();
+
         try {
-          await connect();
+          const user = await User.findOne({
+            email: credentials.email,
+          });
 
-          // Verificar se o usuário existe
-          const user = await User.findOne({ email: credentials.email });
+          if (user) {
+            const isPasswordCorrect = await bcrypt.compare(
+              credentials.password,
+              user.password
+            );
 
-          if (!user) {
-            throw new Error("User not found");
-          }
-
-          // Verificar se a senha está correta
-          const isPasswordCorrect = await bcrypt.compare(
-            credentials.password,
-            user.password
-          );
-
-          if (isPasswordCorrect) {
-            return user;
+            if (isPasswordCorrect) {
+              return user;
+            } else {
+              throw new Error("Wrong Credentials!");
+            }
           } else {
-            throw new Error("Wrong Credentials");
+            throw new Error("User not found!");
           }
         } catch (err) {
-          throw new Error(err.message);
+          throw new Error(err.message || "Authentication failed");
         }
       },
     }),
@@ -48,21 +48,8 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    error: "/dashboard/login", // Página de erro personalizada
+    error: "/dashboard/login", // Página personalizada de erro
   },
-  callbacks: {
-    async session({ session, token, user }) {
-      session.user.id = token.id;
-      return session;
-    },
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
 });
 
 export { handler as GET, handler as POST };

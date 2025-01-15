@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Garante que o código será executado no cliente
 
 import { motion } from "framer-motion";
 import Button from "../../components/Button/Button";
@@ -27,7 +27,7 @@ const Contact = () => {
             cols="30"
             rows="10"
           ></textarea>
-          <Button url="#" text="Send"/>
+          <Button url="#" text="Send" />
         </form>
       </div>
     </div>
