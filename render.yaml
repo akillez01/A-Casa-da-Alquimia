@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: A-Casa-da-Alquimia
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://achillesoliveirasouza:45jcdtupZuaSVxw5@cluster0.tmou1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: GOOGLE_CLIENT_ID
+        value: ${{ GOOGLE_CLIENT_ID }}
+      - key: GOOGLE_CLIENT_SECRET
+        value: ${{ GOOGLE_CLIENT_SECRET }}
+      - key: NEXTAUTH_SECRET
+        value: ${{ NEXTAUTH_SECRET }}
+      - key: NEXTAUTH_URL
+        value: https://acasadaalquimia.com.br
+      - key: GITHUB_ID
+        value: ${{ GITHUB_ID }}
+      - key: GITHUB_SECRET
+        value: ${{ GITHUB_SECRET }}
+      - key: NEXT_PUBLIC_BASE_PATH
+        value: /A-Casa-da-Alquimia
