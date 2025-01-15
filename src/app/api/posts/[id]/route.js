@@ -1,39 +1,34 @@
 import Post from "@/models/Post";
-import connect from "@/utils/connect";
+import connect from "@/utils/db";
 import { NextResponse } from "next/server";
 
-export const GET = async (request, { params }) => {
-  const { id } = params;
-
+export const POST = async (request) => {
   try {
-    await connect();
+    const { title, desc, img, content, username } = await request.json();
 
-    const post = await Post.findById(id);
-
-    if (!post) {
-      return new NextResponse("Post not found", { status: 404 });
+    // Validar dados
+    if (!title || !desc || !img || !content || !username) {
+      return new NextResponse("Missing required fields", { status: 400 });
     }
 
-    return new NextResponse(JSON.stringify(post), { status: 200 });
-  } catch (err) {
-    return new NextResponse("Database Error", { status: 500 });
-  }
-};
-
-export const DELETE = async (request, { params }) => {
-  const { id } = params;
-
-  try {
     await connect();
 
-    const post = await Post.findByIdAndDelete(id);
+    const newPost = new Post({
+      title,
+      desc,
+      img,
+      content,
+      username,
+    });
 
-    if (!post) {
-      return new NextResponse("Post not found", { status: 404 });
-    }
+    await newPost.save();
 
-    return new NextResponse("Post has been deleted", { status: 200 });
+    return new NextResponse(
+      JSON.stringify({ message: "Post has been created", postId: newPost._id }),
+      { status: 201 }
+    );
   } catch (err) {
+    console.error("Error creating post:", err);
     return new NextResponse("Database Error", { status: 500 });
   }
 };

@@ -25,6 +25,16 @@ const nextConfig = {
 
   // Configuração para resolver problemas relacionados à exportação estática
   trailingSlash: true, // Adiciona uma barra ao final dos caminhos
+
+  // Configuração do Webpack
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.node$/,
+      use: 'node-loader',
+    });
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;

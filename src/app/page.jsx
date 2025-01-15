@@ -1,10 +1,10 @@
 "use client";
 
-import Button from "@/components/Button/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Hero from "public/alquimia.jpeg";
+import Button from "../components/Button/Button";
 import styles from "./page.module.css";
+import Hero from "/public/alquimia.jpeg";
 
 export default function Home() {
   return (

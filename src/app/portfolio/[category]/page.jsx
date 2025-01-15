@@ -1,6 +1,6 @@
-import Button from "@/components/Button/Button";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Button from "../../../components/Button/Button.jsx";
 import { items } from "./data.js";
 import styles from "./page.module.css";
 

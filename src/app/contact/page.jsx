@@ -1,8 +1,8 @@
 "use client";
 
-import Button from "@/components/Button/Button";
-import { EarthCanvas } from "@/components/canvas"; // Certifique-se de que o caminho está correto
 import { motion } from "framer-motion";
+import Button from "../../components/Button/Button";
+import { EarthCanvas } from "../../components/canvas"; // Certifique-se de que o caminho está correto
 import styles from "./page.module.css";
 
 const Contact = () => {
